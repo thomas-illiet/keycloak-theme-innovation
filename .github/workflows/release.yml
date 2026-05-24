@@ -92,13 +92,12 @@ jobs:
           set -euo pipefail
           mkdir -p build/release-assets
           cp "build/ai-innovation-keycloak-theme-${{ matrix.keycloak_version }}.jar" build/release-assets/
-          cp "build/build-metadata-${{ matrix.keycloak_version }}.properties" build/release-assets/
 
       - name: Upload intermediate assets
         uses: actions/upload-artifact@v7
         with:
           name: ai-innovation-keycloak-theme-${{ matrix.keycloak_version }}
-          path: build/release-assets/*
+          path: build/release-assets/*.jar
           if-no-files-found: error
 
   publish:
@@ -131,4 +130,4 @@ jobs:
           RELEASE_TAG: ${{ needs.resolve.outputs.release_tag }}
         run: |
           set -euo pipefail
-          gh release upload "$RELEASE_TAG" release-assets/* --clobber --repo "$GITHUB_REPOSITORY"
+          gh release upload "$RELEASE_TAG" release-assets/*.jar release-assets/SHA256SUMS --clobber --repo "$GITHUB_REPOSITORY"

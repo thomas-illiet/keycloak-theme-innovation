@@ -103,7 +103,6 @@ When a GitHub release is published, the workflow builds a matrix for the five la
 
 ```text
 ai-innovation-keycloak-theme-<KEYCLOAK_VERSION>.jar
-build-metadata-<KEYCLOAK_VERSION>.properties
 SHA256SUMS
 ```
 

@@ -43,13 +43,12 @@ The default release target is:
 latest-5
 ```
 
-That means the workflow resolves the five latest stable Keycloak versions, builds one JAR per version, validates each Docker image, generates checksums, and uploads assets to the GitHub release.
+That means the workflow resolves the five latest stable Keycloak versions, builds one JAR per version, validates each Docker image, generates checksums, and uploads the JARs plus `SHA256SUMS` to the GitHub release.
 
 Release assets:
 
 ```text
 ai-innovation-keycloak-theme-<KEYCLOAK_VERSION>.jar
-build-metadata-<KEYCLOAK_VERSION>.properties
 SHA256SUMS
 ```
 

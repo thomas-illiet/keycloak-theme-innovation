@@ -103,7 +103,6 @@ Release assets:
 
 ```text
 ai-innovation-keycloak-theme-<KEYCLOAK_VERSION>.jar
-build-metadata-<KEYCLOAK_VERSION>.properties
 SHA256SUMS
 ```
 
