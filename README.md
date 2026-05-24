@@ -10,8 +10,6 @@ Ready-to-use Keycloak theme for three supported surfaces:
 
 The project is English-only and intentionally does not ship `account` or `admin` themes.
 
-Current default target: **Keycloak 26.6.2**. Release automation builds ready-to-install artifacts for at least the five latest stable Keycloak versions.
-
 ## Screenshots
 
 ### Welcome
