@@ -48,7 +48,7 @@
           </p>
           <div class="ai-welcome__actions">
             <#if adminConsoleEnabled>
-              <a class="pf-v5-c-button pf-m-primary" href="${adminUrl}">Admin Console</a>
+              <a class="pf-v5-c-button pf-m-primary ai-button--admin" href="${adminUrl}">Admin Console</a>
             </#if>
           </div>
         </div>
@@ -65,7 +65,7 @@
               </div>
               <h2 class="pf-v5-c-alert__title">${successMessage}</h2>
             </div>
-            <a class="pf-v5-c-button pf-m-primary pf-m-block" href="${adminUrl}">Admin Console</a>
+            <a class="pf-v5-c-button pf-m-primary pf-m-block ai-button--admin" href="${adminUrl}">Admin Console</a>
           </#if>
 
           <#if bootstrap>
@@ -144,7 +144,7 @@
                 </div>
 
                 <input name="stateChecker" type="hidden" value="${stateChecker}">
-                <button class="pf-v5-c-button pf-m-primary pf-m-block" type="submit">Create user</button>
+                <button class="pf-v5-c-button pf-m-primary pf-m-block ai-button--create-user" type="submit">Create user</button>
               </form>
             <#else>
               <h2>Local access required</h2>

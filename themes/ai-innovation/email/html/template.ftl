@@ -23,7 +23,9 @@
                     background: #0f766e;
                     border-radius: 8px;
                     font-weight: 700;
+                    line-height: 1;
                     text-decoration: none;
+                    white-space: nowrap;
                   }
                 </style>
                 <#nested>
