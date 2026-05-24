@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" role="img" aria-label="AI Innovation lattice background">
+  <defs>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2dd4bf" stop-opacity="0.72"/>
+      <stop offset="0.55" stop-color="#b8f25f" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#f5b84b" stop-opacity="0.5"/>
+    </linearGradient>
+    <pattern id="micro" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M0 40h80M40 0v80" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="1200" fill="#07110f"/>
+  <rect width="1600" height="1200" fill="url(#micro)"/>
+  <g fill="none" stroke="url(#line)" stroke-width="2">
+    <path d="M120 940 340 780 560 840 820 620 1050 700 1360 420 1500 470"/>
+    <path d="M80 280 310 350 520 250 790 340 1010 210 1260 260 1490 120"/>
+    <path d="M240 1080 490 940 730 1000 930 820 1190 900 1480 760"/>
+    <path d="M500 80 620 260 760 300 920 480 1120 420 1340 610"/>
+  </g>
+  <g fill="#2dd4bf">
+    <circle cx="120" cy="940" r="5"/>
+    <circle cx="340" cy="780" r="5"/>
+    <circle cx="560" cy="840" r="5"/>
+    <circle cx="820" cy="620" r="5"/>
+    <circle cx="1050" cy="700" r="5"/>
+    <circle cx="1360" cy="420" r="5"/>
+    <circle cx="310" cy="350" r="5"/>
+    <circle cx="790" cy="340" r="5"/>
+    <circle cx="1260" cy="260" r="5"/>
+    <circle cx="930" cy="820" r="5"/>
+  </g>
+  <g fill="#b8f25f" opacity="0.9">
+    <circle cx="500" cy="80" r="4"/>
+    <circle cx="620" cy="260" r="4"/>
+    <circle cx="920" cy="480" r="4"/>
+    <circle cx="1190" cy="900" r="4"/>
+  </g>
+</svg>

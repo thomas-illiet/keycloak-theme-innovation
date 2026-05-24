@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
+  <title id="title">AI Innovation Identity v2</title>
+  <desc id="desc">AI Innovation Keycloak theme banner with a dark lattice background.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#06110e"/>
+      <stop offset="0.58" stop-color="#10201d"/>
+      <stop offset="1" stop-color="#07110f"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#b8f25f"/>
+    </linearGradient>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M0 40h80M40 0v80" stroke="#d8e5e0" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="360" fill="url(#bg)"/>
+  <rect width="1280" height="360" fill="url(#grid)"/>
+  <g fill="none" stroke-width="2">
+    <path d="M70 285 220 210 390 245 560 135 720 175 910 85 1180 145" stroke="#b8f25f" stroke-opacity="0.62"/>
+    <path d="M120 95 320 140 500 75 705 120 880 62 1160 105" stroke="#2dd4bf" stroke-opacity="0.34"/>
+    <path d="M260 350 420 292 640 318 805 248 1030 290 1220 232" stroke="#f5b84b" stroke-opacity="0.3"/>
+  </g>
+  <g fill="#2dd4bf">
+    <circle cx="70" cy="285" r="5"/>
+    <circle cx="220" cy="210" r="5"/>
+    <circle cx="560" cy="135" r="5"/>
+    <circle cx="720" cy="175" r="5"/>
+    <circle cx="910" cy="85" r="5"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="72" y="122" fill="#e7f0ec" font-size="34" font-weight="850">AI Innovation</text>
+    <text x="74" y="152" fill="#b8f25f" font-size="18" font-weight="750">Identity v2</text>
+    <path d="M332 111h96" stroke="#2dd4bf" stroke-width="2"/>
+    <path d="M362 147h70" stroke="#f5b84b" stroke-width="2"/>
+    <text x="72" y="238" fill="#e7f0ec" font-size="68" font-weight="850">Keycloak theme</text>
+    <text x="75" y="286" fill="#d8e5e0" fill-opacity="0.78" font-size="24" font-weight="500">Login, email and welcome experiences for intelligent products.</text>
+  </g>
+</svg>

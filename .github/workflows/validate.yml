@@ -1,0 +1,52 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      keycloak_version:
+        description: "Keycloak version to validate. Use 'latest' for the latest stable release."
+        required: false
+        default: "latest"
+
+jobs:
+  validate:
+    name: Validate theme against Keycloak
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Resolve Keycloak version
+        id: keycloak
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          KEYCLOAK_VERSION: ${{ github.event.inputs.keycloak_version || 'latest' }}
+        run: |
+          version="$(./scripts/resolve-keycloak-version.sh)"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "Resolved Keycloak version: $version"
+
+      - name: Validate theme structure
+        run: ./scripts/validate-theme.sh
+
+      - name: Build ready-to-use JAR
+        env:
+          KEYCLOAK_VERSION: ${{ steps.keycloak.outputs.version }}
+        run: ./scripts/package-theme.sh
+
+      - name: Validate Docker image
+        run: docker build --build-arg KEYCLOAK_VERSION="${{ steps.keycloak.outputs.version }}" -t ai-innovation-keycloak-theme:validation .
+
+      - name: Upload validation artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-innovation-keycloak-theme-${{ steps.keycloak.outputs.version }}-validation
+          path: |
+            build/ai-innovation-keycloak-theme-${{ steps.keycloak.outputs.version }}.jar
+            build/build-metadata-${{ steps.keycloak.outputs.version }}.properties
+          if-no-files-found: error

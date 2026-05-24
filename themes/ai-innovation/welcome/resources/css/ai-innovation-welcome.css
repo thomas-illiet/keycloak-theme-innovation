@@ -1,0 +1,183 @@
+.ai-welcome {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+  gap: clamp(28px, 7vw, 96px);
+  align-items: center;
+  width: min(100% - 40px, 1180px);
+  min-height: 100vh;
+  margin-inline: auto;
+  padding-block: clamp(28px, 7vh, 80px);
+}
+
+.ai-welcome__hero {
+  display: grid;
+  gap: clamp(36px, 8vh, 96px);
+}
+
+.ai-welcome__brand img {
+  display: block;
+  width: min(280px, 72vw);
+  height: auto;
+}
+
+.ai-welcome__content {
+  max-width: 700px;
+}
+
+.ai-welcome__eyebrow {
+  margin: 0 0 16px;
+  color: var(--ai-lime);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ai-welcome h1 {
+  margin: 0;
+  color: var(--ai-text-strong);
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.ai-welcome__subtitle {
+  max-width: 560px;
+  min-height: 3.1em;
+  margin: 24px 0 0;
+  color: var(--ai-text-muted);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.55;
+}
+
+.ai-welcome__subtitle-text {
+  display: inline-block;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.ai-welcome__subtitle.is-changing .ai-welcome__subtitle-text {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.ai-welcome__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.pf-v5-c-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding-block: 0;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: var(--ai-radius);
+  font-weight: 750;
+}
+
+.pf-v5-c-button.pf-m-block {
+  display: flex;
+  width: 100%;
+}
+
+.pf-v5-c-button.pf-m-primary {
+  --pf-v5-c-button--m-primary--BackgroundColor: #0f766e;
+  --pf-v5-c-button--m-primary--hover--BackgroundColor: #0b5f59;
+  --pf-v5-c-button--m-primary--Color: #eef7f4;
+  box-shadow: 0 10px 26px rgba(15, 118, 110, 0.32);
+}
+
+.pf-v5-c-button.pf-m-secondary {
+  color: #caff9f;
+  border-color: rgba(184, 242, 95, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.ai-welcome__panel {
+  color: var(--ai-ink);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: var(--ai-radius);
+  background: var(--ai-panel);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.32);
+  padding: clamp(22px, 4vw, 36px);
+  backdrop-filter: blur(18px);
+}
+
+.pf-v5-theme-dark .ai-welcome__panel {
+  color: var(--ai-text-strong);
+  border-color: rgba(184, 242, 95, 0.18);
+  background: rgba(12, 22, 20, 0.94);
+}
+
+.ai-welcome__panel h2 {
+  margin: 0 0 8px;
+  font-size: 1.45rem;
+}
+
+.ai-welcome__panel p {
+  color: var(--ai-muted);
+  line-height: 1.55;
+}
+
+.pf-v5-theme-dark .ai-welcome__panel p {
+  color: rgba(213, 228, 222, 0.72);
+}
+
+.pf-v5-c-form {
+  display: grid;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.pf-v5-c-form__group {
+  display: grid;
+  gap: 8px;
+}
+
+.pf-v5-c-form-control {
+  border-color: rgba(16, 32, 29, 0.2);
+  border-radius: var(--ai-radius);
+}
+
+.pf-v5-theme-dark .pf-v5-c-form-control {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--ai-text-strong);
+}
+
+.ai-welcome__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+@media (max-width: 880px) {
+  .ai-welcome {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .ai-welcome h1 {
+    font-size: clamp(2.5rem, 15vw, 4.7rem);
+  }
+}
+
+@media (max-width: 520px) {
+  .ai-welcome {
+    width: min(100% - 24px, 100%);
+  }
+
+  .ai-welcome__grid,
+  .ai-welcome__actions {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,62 @@
+services:
+  keycloak:
+    build:
+      context: .
+      args:
+        KEYCLOAK_VERSION: ${KEYCLOAK_VERSION:-26.6.2}
+    command:
+      - start-dev
+      - --import-realm
+      - --spi-theme--welcome-theme=ai-innovation
+      - --spi-theme--static-max-age=-1
+      - --spi-theme--cache-themes=false
+      - --spi-theme--cache-templates=false
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: ${KEYCLOAK_ADMIN:-admin}
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD:-admin}
+      KC_HEALTH_ENABLED: "true"
+      KC_METRICS_ENABLED: "true"
+      KC_LOG_LEVEL: ${KC_LOG_LEVEL:-info}
+    ports:
+      - "${KEYCLOAK_PORT:-8080}:8080"
+    volumes:
+      - ./themes/ai-innovation:/opt/keycloak/themes/ai-innovation:ro
+      - ./realm:/opt/keycloak/data/import:ro
+
+  theme-init:
+    image: quay.io/keycloak/keycloak:${KEYCLOAK_VERSION:-26.6.2}
+    depends_on:
+      keycloak:
+        condition: service_started
+    environment:
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN:-admin}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD:-admin}
+      KEYCLOAK_URL: http://keycloak:8080
+      KEYCLOAK_REALM: ai-innovation
+    entrypoint:
+      - /bin/bash
+      - -c
+    command:
+      - |
+        set -euo pipefail
+
+        until /opt/keycloak/bin/kcadm.sh config credentials \
+          --server "$$KEYCLOAK_URL" \
+          --realm master \
+          --user "$$KEYCLOAK_ADMIN" \
+          --password "$$KEYCLOAK_ADMIN_PASSWORD"; do
+          sleep 2
+        done
+
+        /opt/keycloak/bin/kcadm.sh update realms/master \
+          -s loginTheme=ai-innovation \
+          -s emailTheme=ai-innovation
+
+        /opt/keycloak/bin/kcadm.sh update "realms/$$KEYCLOAK_REALM" \
+          -s loginTheme=ai-innovation \
+          -s emailTheme=ai-innovation \
+          -s internationalizationEnabled=true \
+          -s defaultLocale=en
+
+        echo "AI Innovation login/email theme applied to master and $$KEYCLOAK_REALM realms."
+    restart: "no"

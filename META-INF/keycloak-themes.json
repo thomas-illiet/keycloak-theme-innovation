@@ -1,0 +1,12 @@
+{
+  "themes": [
+    {
+      "name": "ai-innovation",
+      "types": [
+        "login",
+        "email",
+        "welcome"
+      ]
+    }
+  ]
+}

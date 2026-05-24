@@ -1,0 +1,68 @@
+{
+  "realm": "ai-innovation",
+  "displayName": "AI Innovation",
+  "displayNameHtml": "<strong>AI Innovation</strong>",
+  "enabled": true,
+  "registrationAllowed": true,
+  "resetPasswordAllowed": true,
+  "rememberMe": true,
+  "verifyEmail": false,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "editUsernameAllowed": false,
+  "bruteForceProtected": true,
+  "internationalizationEnabled": true,
+  "supportedLocales": [
+    "en"
+  ],
+  "defaultLocale": "en",
+  "loginTheme": "ai-innovation",
+  "emailTheme": "ai-innovation",
+  "clients": [
+    {
+      "clientId": "ai-innovation-app",
+      "name": "AI Innovation Demo App",
+      "description": "Demo public OIDC client for validating the AI Innovation identity experience.",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true,
+      "implicitFlowEnabled": false,
+      "serviceAccountsEnabled": false,
+      "redirectUris": [
+        "http://localhost:3000/*",
+        "http://127.0.0.1:3000/*"
+      ],
+      "webOrigins": [
+        "+"
+      ],
+      "attributes": {
+        "pkce.code.challenge.method": "S256"
+      }
+    }
+  ],
+  "users": [
+    {
+      "username": "demo",
+      "enabled": true,
+      "email": "demo@ai-innovation.local",
+      "emailVerified": true,
+      "firstName": "Demo",
+      "lastName": "User",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "demo",
+          "temporary": false
+        }
+      ]
+    }
+  ],
+  "smtpServer": {
+    "from": "no-reply@ai-innovation.local",
+    "fromDisplayName": "AI Innovation Identity",
+    "replyTo": "support@ai-innovation.local",
+    "replyToDisplayName": "AI Innovation Support"
+  }
+}
