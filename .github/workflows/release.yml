@@ -27,7 +27,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Resolve release tag
         id: release
@@ -74,7 +74,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Validate theme structure
         run: ./scripts/validate-theme.sh
@@ -95,7 +95,7 @@ jobs:
           cp "build/build-metadata-${{ matrix.keycloak_version }}.properties" build/release-assets/
 
       - name: Upload intermediate assets
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ai-innovation-keycloak-theme-${{ matrix.keycloak_version }}
           path: build/release-assets/*
@@ -112,7 +112,7 @@ jobs:
 
     steps:
       - name: Download built assets
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           pattern: ai-innovation-keycloak-theme-*
           path: release-assets
