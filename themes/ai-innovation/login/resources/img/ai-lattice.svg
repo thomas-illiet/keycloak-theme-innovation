@@ -1,10 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" role="img" aria-label="AI Innovation lattice background">
   <defs>
+    <style>
+      .ai-electrons {
+        opacity: 0.78;
+      }
+
+      .ai-electron {
+        filter: url(#electron-glow);
+      }
+
+      .ai-electron--cyan {
+        fill: #2dd4bf;
+      }
+
+      .ai-electron--lime {
+        fill: #b8f25f;
+      }
+
+      .ai-electron--amber {
+        fill: #f5b84b;
+        opacity: 0.72;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .ai-electrons {
+          display: none;
+        }
+      }
+    </style>
     <linearGradient id="line" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#2dd4bf" stop-opacity="0.72"/>
       <stop offset="0.55" stop-color="#b8f25f" stop-opacity="0.42"/>
       <stop offset="1" stop-color="#f5b84b" stop-opacity="0.5"/>
     </linearGradient>
+    <filter id="electron-glow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="soft-glow"/>
+      <feMerge>
+        <feMergeNode in="soft-glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
     <pattern id="micro" width="80" height="80" patternUnits="userSpaceOnUse">
       <path d="M0 40h80M40 0v80" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
     </pattern>
@@ -12,10 +47,60 @@
   <rect width="1600" height="1200" fill="#07110f"/>
   <rect width="1600" height="1200" fill="url(#micro)"/>
   <g fill="none" stroke="url(#line)" stroke-width="2">
-    <path d="M120 940 340 780 560 840 820 620 1050 700 1360 420 1500 470"/>
-    <path d="M80 280 310 350 520 250 790 340 1010 210 1260 260 1490 120"/>
-    <path d="M240 1080 490 940 730 1000 930 820 1190 900 1480 760"/>
-    <path d="M500 80 620 260 760 300 920 480 1120 420 1340 610"/>
+    <path id="ai-path-1" d="M120 940 340 780 560 840 820 620 1050 700 1360 420 1500 470"/>
+    <path id="ai-path-2" d="M80 280 310 350 520 250 790 340 1010 210 1260 260 1490 120"/>
+    <path id="ai-path-3" d="M240 1080 490 940 730 1000 930 820 1190 900 1480 760"/>
+    <path id="ai-path-4" d="M500 80 620 260 760 300 920 480 1120 420 1340 610"/>
+  </g>
+  <g class="ai-electrons">
+    <g class="ai-electron ai-electron--cyan">
+      <circle cx="-16" cy="0" r="2" opacity="0.18"/>
+      <circle cx="-8" cy="0" r="2.8" opacity="0.34"/>
+      <circle cx="0" cy="0" r="3.8"/>
+      <animateMotion dur="16s" begin="-3s" repeatCount="indefinite" rotate="auto" calcMode="linear">
+        <mpath href="#ai-path-1"/>
+      </animateMotion>
+    </g>
+    <g class="ai-electron ai-electron--lime">
+      <circle cx="-14" cy="0" r="1.8" opacity="0.16"/>
+      <circle cx="-7" cy="0" r="2.5" opacity="0.3"/>
+      <circle cx="0" cy="0" r="3.4"/>
+      <animateMotion dur="19s" begin="-10s" repeatCount="indefinite" rotate="auto" calcMode="linear">
+        <mpath href="#ai-path-1"/>
+      </animateMotion>
+    </g>
+    <g class="ai-electron ai-electron--cyan">
+      <circle cx="-18" cy="0" r="2" opacity="0.16"/>
+      <circle cx="-9" cy="0" r="2.6" opacity="0.32"/>
+      <circle cx="0" cy="0" r="3.6"/>
+      <animateMotion dur="17s" begin="-6s" repeatCount="indefinite" rotate="auto" calcMode="linear">
+        <mpath href="#ai-path-2"/>
+      </animateMotion>
+    </g>
+    <g class="ai-electron ai-electron--amber">
+      <circle cx="-14" cy="0" r="1.7" opacity="0.14"/>
+      <circle cx="-7" cy="0" r="2.3" opacity="0.28"/>
+      <circle cx="0" cy="0" r="3.2"/>
+      <animateMotion dur="22s" begin="-14s" repeatCount="indefinite" rotate="auto" calcMode="linear">
+        <mpath href="#ai-path-2"/>
+      </animateMotion>
+    </g>
+    <g class="ai-electron ai-electron--lime">
+      <circle cx="-16" cy="0" r="1.9" opacity="0.17"/>
+      <circle cx="-8" cy="0" r="2.5" opacity="0.32"/>
+      <circle cx="0" cy="0" r="3.5"/>
+      <animateMotion dur="18s" begin="-9s" repeatCount="indefinite" rotate="auto" calcMode="linear">
+        <mpath href="#ai-path-3"/>
+      </animateMotion>
+    </g>
+    <g class="ai-electron ai-electron--cyan">
+      <circle cx="-14" cy="0" r="1.8" opacity="0.16"/>
+      <circle cx="-7" cy="0" r="2.4" opacity="0.3"/>
+      <circle cx="0" cy="0" r="3.3"/>
+      <animateMotion dur="20s" begin="-12s" repeatCount="indefinite" rotate="auto" calcMode="linear">
+        <mpath href="#ai-path-4"/>
+      </animateMotion>
+    </g>
   </g>
   <g fill="#2dd4bf">
     <circle cx="120" cy="940" r="5"/>
