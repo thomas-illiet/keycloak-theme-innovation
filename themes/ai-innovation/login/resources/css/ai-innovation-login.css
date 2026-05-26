@@ -102,6 +102,11 @@
   --ai-login-footer-inline: clamp(22px, 5vw, 40px);
 }
 
+.pf-v5-c-login__main-body > .pf-v5-c-login__main-footer {
+  --ai-login-footer-inline: 0px;
+  padding-inline: 0;
+}
+
 .pf-v5-c-login__main-header {
   display: flex;
   justify-content: center;
@@ -195,6 +200,15 @@ a.pf-v5-c-button.pf-m-secondary {
   --pf-v5-c-button--m-primary--hover--BackgroundColor: #0b5f59;
   --pf-v5-c-button--m-primary--Color: #eef7f4;
   box-shadow: 0 10px 26px rgba(15, 118, 110, 0.28);
+}
+
+#kc-login {
+  --pf-v5-c-button--after--BorderColor: transparent;
+  --pf-v5-c-button--after--BorderWidth: 0;
+  --pf-v5-c-button--hover--after--BorderWidth: 0;
+  --pf-v5-c-button--focus--after--BorderWidth: 0;
+  --pf-v5-c-button--active--after--BorderWidth: 0;
+  border-color: transparent;
 }
 
 #kc-login,
@@ -342,6 +356,39 @@ a.pf-v5-c-button.pf-m-secondary {
 
 .pf-v5-theme-dark #kc-info-wrapper #kc-registration a {
   color: #eafffb;
+}
+
+.pf-v5-c-login__main-footer > .pf-v5-c-login__main-footer-band:has(+ #kc-social-providers) {
+  display: none;
+}
+
+#kc-social-providers {
+  width: 100%;
+  margin: 16px 0 0;
+}
+
+#kc-social-providers .pf-v5-c-login__main-body,
+#kc-social-providers ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#kc-social-providers ul {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+}
+
+#kc-social-providers li {
+  padding: 0;
+}
+
+#kc-social-providers a.pf-v5-c-button {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  padding-inline: 18px;
 }
 
 .ai-login-footer {

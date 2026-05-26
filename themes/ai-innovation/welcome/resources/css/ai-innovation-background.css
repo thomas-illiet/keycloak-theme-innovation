@@ -236,6 +236,15 @@ a:focus-visible {
   background-color: #094e49;
 }
 
+.pf-v5-c-button.pf-m-primary.ai-button--admin {
+  --pf-v5-c-button--after--BorderColor: transparent;
+  --pf-v5-c-button--after--BorderWidth: 0;
+  --pf-v5-c-button--hover--after--BorderWidth: 0;
+  --pf-v5-c-button--focus--after--BorderWidth: 0;
+  --pf-v5-c-button--active--after--BorderWidth: 0;
+  border-color: transparent;
+}
+
 .pf-v5-c-button.pf-m-secondary,
 .pf-v5-c-button.pf-m-control,
 .pf-v5-c-button.pf-m-plain {
